@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sunu Écran — Séries et films sénégalais</title>
+<meta name="description" content="Sunu Écran : la plateforme des séries et films sénégalais. Premiers épisodes gratuits, abonnement par Wave ou Orange Money.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07110d;--bg2:#0d1c15;--ink:#f4efe4;--mute:#9db0a5;--line:#1f3327;--acc:#f2b544;--red:#e2453c;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#07110d}}
+:root[data-theme="dark"]{--bg:#07110d}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px));background:var(--bg)}
+body{font-family:'Figtree',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden}
+h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;line-height:1.05;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 22px}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50}
+header::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(7,17,13,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.brand{font:800 1.5rem 'Bricolage Grotesque';display:flex;align-items:center;gap:10px}
+.brand i{width:14px;height:14px;background:linear-gradient(90deg,#1f9d55 33%,var(--acc) 33% 66%,var(--red) 66%);border-radius:3px;display:block}
+nav{display:flex;gap:26px;color:var(--mute);font-size:.95rem}nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 26px;border-radius:8px;border:0;background:var(--acc);color:#1a1204;font-weight:600;cursor:pointer;transition:transform .2s,filter .2s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}.btn.g{background:rgba(255,255,255,.1);color:var(--ink)}
+.hero{position:relative;min-height:min(78vh,640px);display:flex;align-items:flex-end;overflow:hidden}
+.hero .bgp{position:absolute;inset:0;z-index:-1}
+.hero .bgp::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,var(--bg) 4%,transparent 60%),linear-gradient(90deg,rgba(7,17,13,.85),transparent 65%)}
+.hero .wrap{padding-bottom:64px;padding-top:120px}
+.tag{color:var(--acc);font-weight:600;font-size:.95rem}
+.hero h1{font-size:clamp(3rem,8vw,6.4rem);margin:8px 0 14px;max-width:11ch}
+.hero p{max-width:520px;color:#d5dccf;font-size:1.08rem}.hero .row{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+.in{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}.in2{animation-delay:.15s}@keyframes rise{from{opacity:0;transform:translateY(20px)}}
+section{padding:46px 0}h2{font-size:1.7rem;margin-bottom:18px}
+.rail{display:flex;gap:16px;overflow-x:auto;padding:4px 22px 18px;scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.it{flex:none;width:190px;cursor:pointer;scroll-snap-align:start}
+.poster{position:relative;aspect-ratio:2/3;border-radius:8px;overflow:hidden;display:flex;align-items:flex-end;padding:14px;transition:transform .3s,box-shadow .3s;box-shadow:0 14px 26px -14px #000}
+.it:hover .poster{transform:translateY(-6px) scale(1.03);box-shadow:0 22px 34px -12px #000,0 0 0 2px var(--acc)}
+.pt{font:800 1.5rem 'Bricolage Grotesque';line-height:1;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+.poster em{position:absolute;top:10px;left:10px;font:600 .68rem 'Figtree';font-style:normal;background:rgba(0,0,0,.55);padding:3px 9px;border-radius:20px}
+.it small{display:block;margin-top:9px;color:var(--mute);font-size:.86rem}.it b{font-weight:600}
+.plans{display:grid;gap:0;max-width:760px}
+.pl{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;border-bottom:1px solid var(--line)}
+.pl b{font:800 1.5rem 'Bricolage Grotesque'}.pl span{color:var(--mute);display:block;font-size:.92rem}.pl strong{color:var(--acc);font:800 1.4rem 'Bricolage Grotesque';white-space:nowrap}
+.codebox{margin-top:22px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.codebox input{background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:12px 14px;color:var(--ink);font:inherit;width:230px}
+.creator{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.creator .wrap{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap}.creator h2{margin:0;max-width:22ch}.creator p{color:var(--mute);max-width:46ch;margin-top:8px}
+footer{padding:44px 22px calc(50px + env(safe-area-inset-bottom,0px));text-align:center;color:var(--mute);font-size:.9rem}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.82);backdrop-filter:blur(6px);z-index:90;display:none;align-items:center;justify-content:center;padding:16px}.ov.on{display:flex}
+.md{background:var(--bg2);border:1px solid var(--line);border-radius:12px;max-width:940px;width:100%;max-height:94vh;overflow:auto;position:relative}
+.x{position:absolute;top:8px;right:12px;z-index:3;background:rgba(0,0,0,.6);border:0;border-radius:50%;width:38px;height:38px;font-size:1.5rem;cursor:pointer}
+.pv{aspect-ratio:16/9;background:#000;display:grid;place-items:center;text-align:center;padding:20px;position:relative}
+.pv iframe,.pv video{position:absolute;inset:0;width:100%;height:100%;border:0}
+.pv h3{font-size:1.6rem;margin-bottom:8px}.pv p{color:var(--mute);margin-bottom:16px}
+.mi{padding:24px 28px 30px}.mi h2{font-size:2.3rem;margin:4px 0 8px}.mi>p{color:#cfd8cb;max-width:60ch}
+.eps{margin-top:22px;display:grid;gap:8px}
+.ep{display:flex;justify-content:space-between;align-items:center;padding:13px 16px;background:rgba(255,255,255,.05);border:0;border-radius:8px;cursor:pointer;text-align:left;width:100%}
+.ep:hover{background:rgba(255,255,255,.1)}.ep.on{outline:1px solid var(--acc)}.ep span{color:var(--mute);font-size:.85rem}
+@media(max-width:820px){nav{display:none}.it{width:150px}.pt{font-size:1.2rem}.mi{padding:20px 18px 26px}.mi h2{font-size:1.8rem}.pl{flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.co{padding:36px 28px 30px;max-width:460px;margin:0 auto;display:grid;gap:14px}.co h2{margin:0;font-size:1.8rem}.co p{color:var(--mute)}.co label{font-size:.9rem;color:var(--mute)}
+.cp{font:800 2.2rem 'Bricolage Grotesque';color:var(--acc)}#ph{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:13px 14px;color:var(--ink);font:inherit;width:100%}
+.mth{display:grid;gap:8px}.mth label{position:relative;cursor:pointer;color:var(--ink)}.mth input{position:absolute;opacity:0}.mth span{display:block;padding:14px 16px;border:1px solid var(--line);border-radius:8px;transition:border-color .2s,background .2s}
+.mth input:checked+span{border-color:var(--acc);background:rgba(242,181,68,.09)}.mth input:focus-visible+span{outline:2px solid var(--acc);outline-offset:2px}#pe{color:var(--red);min-height:1.2em;font-size:.9rem}.btn:disabled{opacity:.6;cursor:wait}
+</style>
+</head>
+<body>
+<header><div class="wrap bar"><a class="brand" href="#top"><i></i>Sunu Écran</a>
+<nav><a href="#series">Séries</a><a href="#films">Films</a><a href="#abo">Abonnement</a><a href="#createurs">Créateurs</a></nav>
+<a class="btn" href="#abo">S'abonner</a></div></header>
+
+<main id="top">
+<div class="hero"><div class="bgp" id="hbg"></div><div class="wrap">
+<div class="tag in" id="htag"></div><h1 class="in" id="ht"></h1><p class="in in2" id="hs"></p>
+<div class="row in in2"><button class="btn" id="hplay">▶ Regarder</button><button class="btn g" id="hinfo">Plus d'infos</button></div></div></div>
+
+<section id="series"><div class="wrap"><h2>Séries sénégalaises</h2></div><div class="rail" id="r1"></div></section>
+<section id="films"><div class="wrap"><h2>Films</h2></div><div class="rail" id="r2"></div></section>
+
+<section id="abo"><div class="wrap"><h2>Regardez sans limite</h2>
+<p style="color:var(--mute);margin-bottom:8px">Le premier épisode de chaque série est gratuit. Payez par Wave, Orange Money ou carte bancaire : votre code d'accès s'affiche dès que le paiement est confirmé.</p>
+<div class="plans" id="plans"></div>
+<div class="codebox"><input id="code" placeholder="Vous avez un code d'accès ?" autocomplete="off"><button class="btn g" onclick="unlock()">Débloquer</button><span id="cs" style="color:var(--mute)"></span></div></div></section>
+
+<div class="creator" id="createurs"><div class="wrap" style="padding-top:54px;padding-bottom:54px"><div><h2>Réalisateur ou producteur ? Diffusez ici.</h2><p>Votre série ou votre film mérite son public. Vous gardez vos droits, nous partageons les revenus.</p></div><a class="btn" data-w="creator" href="#">Proposer mon œuvre</a></div></div>
+</main>
+<footer>© 2026 Sunu Écran · Contenus diffusés avec l'accord de leurs ayants droit<br><a href="https://wa.me/221762496803" style="color:var(--acc)">Une question ? WhatsApp 76 249 68 03</a></footer>
+
+<div class="ov" id="ov" onclick="if(event.target===this)closeM()"><div class="md" id="md"></div></div>
+
+<script>
+const WA="221762496803",$=s=>document.querySelector(s),fmt=n=>n.toLocaleString('fr-FR')+' FCFA';
+// Ajoutez eps:[{yt:"ID"},{mp4:"lien.mp4"},...] à une œuvre pour brancher ses vidéos, dans l'ordre des épisodes.
+// Pour brancher une vraie vidéo : yt:"ID_YOUTUBE" (chaîne autorisée) ou mp4:"lien.mp4", pour un épisode. img:"affiche.jpg" pour l'affiche.
+const M=[
+{id:1,t:"Sable Rouge",k:"Série",g:"Thriller",y:2026,c:["#e0673a","#7a1f16","#150806"],free:1,n:6,s:"Un secret enterré depuis trente ans refait surface dans une ville du Sine-Saloum. Personne n'est innocent."},
+{id:2,t:"Les Héritiers de la Médina",k:"Série",g:"Drame",y:2026,c:["#e8b04a","#5a3a12","#120c04"],free:1,n:8,s:"À la mort du patriarche, trois familles se disputent une maison, un nom et une vérité."},
+{id:3,t:"Ndank Ndank",k:"Série",g:"Comédie",y:2026,c:["#4fd08a","#125a3a","#04140c"],free:1,n:10,s:"Les mésaventures d'un quartier où rien ne se passe jamais comme prévu."},
+{id:4,t:"Lac Rose",k:"Série",g:"Romance",y:2026,c:["#f06fa0","#7b1f52","#14060e"],free:1,n:6,s:"Deux familles rivales, un mariage, et un été qui change tout."},
+{id:5,t:"Le Dernier Griot",k:"Film",g:"Drame",y:2026,c:["#c9a24a","#3d2c0e","#0d0904"],free:0,n:1,s:"Un vieux griot cherche à qui transmettre la mémoire de tout un village."},
+{id:6,t:"Téranga Express",k:"Film",g:"Comédie",y:2026,c:["#3fb0e8","#0f3d6b","#040d16"],free:0,n:1,s:"Un chauffeur de car rapide, un passager mystérieux, une course contre la montre."},
+{id:7,t:"Kayor",k:"Film",g:"Historique",y:2026,c:["#d9553f","#4d1710","#100504"],free:0,n:1,s:"Le récit d'une résistance, raconté comme on ne vous l'a jamais montré."},
+{id:8,t:"La Noire de…",k:"Film",g:"Classique",y:1966,c:["#d8d2c4","#3a3a3a","#0a0a0a"],free:0,n:1,s:"Le premier long métrage d'Ousmane Sembène, un classique du cinéma africain."},
+{id:9,t:"Mandabi",k:"Film",g:"Classique",y:1968,c:["#e0a03a","#5c3b0c","#100a03"],free:0,n:1,s:"Un homme reçoit un mandat et se heurte à l'administration. Réalisé par Ousmane Sembène."},
+{id:10,t:"Touki Bouki",k:"Film",g:"Classique",y:1973,c:["#e8703a","#6b1d3a","#12060c"],free:0,n:1,s:"Deux jeunes rêvent de quitter Dakar pour Paris. Réalisé par Djibril Diop Mambéty."},
+{id:11,t:"Xala",k:"Film",g:"Classique",y:1975,c:["#5fb08a","#1c4a3a","#050f0b"],free:0,n:1,s:"Un homme d'affaires frappé d'impuissance le jour de son troisième mariage. Réalisé par Ousmane Sembène."},
+{id:12,t:"Ceddo",k:"Film",g:"Historique",y:1977,c:["#c4703a","#4a2410","#0f0703"],free:0,n:1,s:"Un film historique sur la résistance à l'islamisation forcée. Réalisé par Ousmane Sembène."},
+{id:13,t:"Camp de Thiaroye",k:"Film",g:"Historique",y:1988,c:["#a89c6a","#3a3418","#0c0a04"],free:0,n:1,s:"Le massacre de tirailleurs sénégalais en 1944. Réalisé par Ousmane Sembène et Thierno Faty Sow."},
+{id:14,t:"Hyènes",k:"Film",g:"Drame",y:1992,c:["#d6b04a","#5a2a14","#100804"],free:0,n:1,s:"Une adaptation sénégalaise de « La Visite de la vieille dame ». Réalisé par Djibril Diop Mambéty."},
+{id:15,t:"Moolaadé",k:"Film",g:"Drame",y:2004,c:["#e26a3a","#7a2a10","#140803"],free:0,n:1,s:"Le combat de femmes contre l'excision. Réalisé par Ousmane Sembène."}
+];
+const PL=[["Accès 24 h","Tout le catalogue pendant une journée",500],["Mensuel","Séries et films en illimité",2500],["Annuel","Le meilleur prix, 2 mois offerts",25000]];
+const sc=s=>[...s].map(c=>{const k=c.charCodeAt(0);return k>=65&&k<=90?String.fromCodePoint(0x1D4D0+k-65):k>=97&&k<=122?String.fromCodePoint(0x1D4EA+k-97):c}).join('');
+const LN='✦ ━━━━━━━━━━━━ ✦',hd=t=>`🎬 ${sc('Sunu Ecran')} 🎬\n${LN}\n${sc(t)}\n`;
+const wa=t=>open('https://wa.me/'+WA+'?text='+encodeURIComponent(t),'_blank');
+const bg=m=>m.img?`url('${m.img}') center/cover`:`radial-gradient(90% 70% at 25% 15%,${m.c[0]},transparent 70%),linear-gradient(165deg,${m.c[1]},${m.c[2]})`;
+const ok=()=>{try{return Date.now()<+localStorage.getItem('se_exp')}catch(e){return false}};
+const H=M[0];
+$('#hbg').style.background=bg(H);$('#htag').textContent=`${H.k} · ${H.g} · ${H.y}`;$('#ht').textContent=H.t;$('#hs').textContent=H.s;
+$('#hplay').onclick=()=>openM(H.id,0);$('#hinfo').onclick=()=>openM(H.id);
+const card=m=>`<div class="it" onclick="openM(${m.id})"><div class="poster" style="background:${bg(m)}"><span class="pt">${m.img?'':m.t}</span><em>${m.k}</em></div><small><b>${m.t}</b><br>${m.g}${m.n>1?' · '+m.n+' épisodes':''}</small></div>`;
+$('#r1').innerHTML=M.filter(m=>m.k=='Série').map(card).join('');$('#r2').innerHTML=M.filter(m=>m.k=='Film').map(card).join('');
+$('#plans').innerHTML=PL.map((p,i)=>`<div class="pl"><div><b>${p[0]}</b><span>${p[1]}</span></div><div style="display:flex;gap:16px;align-items:center"><strong>${fmt(p[2])}</strong><button class="btn" onclick="sub(${i})">Choisir</button></div></div>`).join('');
+const api=(u,b)=>fetch(u,b?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(b)}:{}).then(r=>r.json());
+const MT=[["wave","Wave"],["om","Orange Money"],["card","Carte bancaire"]],XB='<button class="x" onclick="closeM()" aria-label="Fermer">×</button>';
+function sub(i){const p=PL[i];$('#md').innerHTML=`${XB}<form class="co" onsubmit="pay(event,${i})"><h2>${p[0]}</h2><div class="cp">${fmt(p[2])}</div><label for="ph">Votre numéro de téléphone</label><input id="ph" inputmode="tel" autocomplete="tel" placeholder="77 000 00 00" required><div class="mth">${MT.map((m,k)=>`<label><input type="radio" name="mt" value="${m[0]}"${k?'':' checked'}><span>${m[1]}</span></label>`).join('')}</div><button class="btn" id="pb">Payer ${fmt(p[2])}</button><p id="pe" role="alert"></p></form>`;$('#ov').classList.add('on')}
+async function pay(e,i){e.preventDefault();const b=$('#pb');b.disabled=true;b.textContent='Redirection…';try{const d=await api('/api/checkout',{plan:i,phone:$('#ph').value,method:document.querySelector('[name=mt]:checked').value});if(!d.url)throw d;location.href=d.url}catch(x){$('#pe').textContent=x.error||'Paiement impossible pour le moment. Réessayez.';b.disabled=false;b.textContent='Payer '+fmt(PL[i][2])}}
+async function unlock(){const c=$('#code').value.trim();if(!c)return;try{const d=await api('/api/unlock',{code:c});if(!d.expires)throw 0;try{localStorage.setItem('se_exp',d.expires)}catch(e){}$('#cs').textContent='✓ Accès débloqué, bon visionnage !';$('#cs').style.color='var(--acc)'}catch(e){$('#cs').textContent='Code invalide ou expiré.';$('#cs').style.color='var(--red)'}}
+async function watchOrder(ref){const md=$('#md');$('#ov').classList.add('on');md.innerHTML='<div class="co"><h2>Paiement en cours…</h2><p>Nous vérifions votre paiement. Gardez cette page ouverte.</p></div>';
+for(let t=0;t<48;t++){try{const d=await api('/api/order/'+encodeURIComponent(ref));if(d.status=='paid'){const u=await api('/api/unlock',{code:d.code});if(u.expires)try{localStorage.setItem('se_exp',u.expires)}catch(e){}md.innerHTML=`${XB}<div class="co"><h2>Paiement confirmé</h2><p>Votre accès est activé. Gardez ce code pour vous reconnecter depuis un autre appareil :</p><div class="cp">${d.code}</div><button class="btn" onclick="closeM()">Regarder</button></div>`;history.replaceState(null,'','/');return}}catch(e){}await new Promise(r=>setTimeout(r,2500))}
+md.innerHTML=`${XB}<div class="co"><h2>Paiement non confirmé</h2><p>Si vous avez été débité, rechargez cette page dans quelques minutes ou écrivez-nous sur WhatsApp au 76 249 68 03.</p></div>`}
+document.querySelectorAll('[data-w]').forEach(a=>a.onclick=e=>{e.preventDefault();wa(`${hd('Proposition')}\n🎥 Je suis réalisateur / producteur et je souhaite diffuser mon œuvre sur Sunu Ecran.\n\n${LN}`)});
+function openM(id,ep){const m=M.find(x=>x.id==id);
+$('#md').innerHTML=`<button class="x" onclick="closeM()" aria-label="Fermer">×</button><div class="pv" id="pv" style="background:${bg(m)}"></div><div class="mi"><div class="tag">${m.k} · ${m.g} · ${m.y}</div><h2>${m.t}</h2><p>${m.s}</p><button class="btn" id="nx" style="display:none;margin-top:18px">Épisode suivant ▶</button><div class="eps">${Array.from({length:m.n},(_,i)=>`<button class="ep" id="e${i}" onclick="play(${m.id},${i})"><b>${m.n>1?'Épisode '+(i+1):'Regarder le film'}</b><span>${i<m.free?'Gratuit':'🔒 Abonnés'}</span></button>`).join('')}</div></div>`;
+$('#ov').classList.add('on');ep!==undefined?play(id,ep):$('#pv').innerHTML=`<div><h3>${m.t}</h3><p>Choisissez un épisode ci-dessous.</p></div>`}
+function play(id,i){const m=M.find(x=>x.id==id),e=(m.eps||[])[i]||{},pv=$('#pv');
+document.querySelectorAll('.ep').forEach(b=>b.classList.remove('on'));$('#e'+i).classList.add('on');const nx=$('#nx');if(i+1<m.n){nx.style.display='inline-flex';nx.onclick=()=>play(id,i+1)}else nx.style.display='none';
+if(!(i<m.free||ok())){pv.innerHTML=`<div><h3>🔒 Réservé aux abonnés</h3><p>${m.n>1?'Épisode '+(i+1):'Ce film'} est accessible avec un abonnement.</p><a class="btn" href="#abo" onclick="closeM()">S'abonner</a></div>`;return}
+pv.innerHTML=e.yt?`<iframe src="https://www.youtube-nocookie.com/embed/${e.yt}?autoplay=1" allow="autoplay;fullscreen" allowfullscreen></iframe>`:e.mp4?`<video src="${e.mp4}" controls autoplay playsinline></video>`:`<div><h3>Bientôt disponible</h3><p>La vidéo de ${m.n>1?'l\'épisode '+(i+1):'ce film'} sera ajoutée ici.</p></div>`}
+function closeM(){$('#ov').classList.remove('on');$('#md').innerHTML=''}
+{const r=new URLSearchParams(location.search).get('ref');if(r)watchOrder(r)}
+addEventListener('keydown',e=>{if(e.key==='Escape')closeM()});
+</script>
+</body>
+</html>
